@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-white">
-      <body className={clsx(inter.className, "cursor-none bg-white")}>
+      <body className={clsx(inter.className, "bg-white")}>
         <StickyCursor />
         {children}
       </body>

@@ -108,6 +108,8 @@ export default function StickyCursor() {
       el.addEventListener("mouseenter", manageMouseOver);
     });
 
+    document.body.style.setProperty("cursor", "none");
+
     return () => {
       window.removeEventListener("mousemove", manageMouseMove);
       document
@@ -115,6 +117,7 @@ export default function StickyCursor() {
         .forEach((el) => {
           el.removeEventListener("mouseenter", manageMouseOver);
         });
+      document.body.style.setProperty("cursor", null);
     };
   }, [isHovered]);
 
