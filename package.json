@@ -1,5 +1,6 @@
 {
-  "name": "sticky-cursor",
+  "name": "sticky-cursor-framer-motion",
+  "description": "Demo of a sticky cursor react component made with framer motion.",
   "version": "0.1.0",
   "private": true,
   "scripts": {

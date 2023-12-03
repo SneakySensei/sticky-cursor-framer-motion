@@ -10,9 +10,16 @@ import {
   useSpring,
 } from "framer-motion";
 
-const springOptions: SpringOptions = { damping: 20, stiffness: 300, mass: 0.5 };
+const SPRING_OPTIONS: SpringOptions = {
+  damping: 20,
+  stiffness: 300,
+  mass: 0.5,
+};
 
-const unstickThresholdDistance = 120;
+const UNSTICK_THRESHOLD_DISTANCE = 120;
+
+const SHADOW_SIZE = 20;
+const SHADOW_SIZE_ON_HOVER = 50;
 
 const getDistanceFromRect = (rect: DOMRect, x: number, y: number) => {
   const { top, left, width, height } = rect;
@@ -53,12 +60,12 @@ export default function StickyCursor() {
 
         const newScaleX = transform(
           distance,
-          [0, unstickThresholdDistance],
+          [0, UNSTICK_THRESHOLD_DISTANCE],
           [1, 1.2]
         );
         const newScaleY = transform(
           distance,
-          [0, unstickThresholdDistance],
+          [0, UNSTICK_THRESHOLD_DISTANCE],
           [1, 0.8]
         );
         pointerShadowScale.x.set(newScaleX);
@@ -75,7 +82,7 @@ export default function StickyCursor() {
           { duration: 0 }
         );
 
-        if (distance > unstickThresholdDistance) {
+        if (distance > UNSTICK_THRESHOLD_DISTANCE) {
           setIsHovered(false);
           animate(
             hoveredElementRef.current,
@@ -115,12 +122,12 @@ export default function StickyCursor() {
   const pointerShadow = { x: useMotionValue(0), y: useMotionValue(0) };
   const pointerShadowScale = { x: useMotionValue(1), y: useMotionValue(1) };
   const smoothPointerShadow = {
-    x: useSpring(pointerShadow.x, springOptions),
-    y: useSpring(pointerShadow.y, springOptions),
+    x: useSpring(pointerShadow.x, SPRING_OPTIONS),
+    y: useSpring(pointerShadow.y, SPRING_OPTIONS),
   };
   const pointerShadowAngle = useMotionValue(`0rad`);
 
-  const cursorSize = isHovered ? 50 : 20;
+  const cursorSize = isHovered ? SHADOW_SIZE_ON_HOVER : SHADOW_SIZE;
 
   return (
     <>
