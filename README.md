@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Awwwards worthy sicky cursor with framer motion
 
-## Getting Started
+A drop-in component which adds a sticky cursor to your next awesome site.
 
-First, run the development server:
+Check it out in action here! - https://x.com/SnehilCodes/status/1726287401621053840
+
+### Requirements
+
+Before using this component you need to [setup tailwindcss](https://tailwindcss.com/docs/installation) and install the following dependencies:
 
 ```bash
-npm run dev
+npm install framer-motion
 # or
-yarn dev
+yarn add framer-motion
 # or
-pnpm dev
-# or
-bun dev
+pnpm add framer-motion
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### How to use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Copy [src/components/StickyCursor.tsx](./src/components/StickyCursor.tsx) into your project and add to the root of you JSX tree.
+2. Add the `data-sticky` attribute to any element you want the cursor to stick to.
+3. That's it!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Credits
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> This project is based on the implementation by [Olivier Larose](https://www.youtube.com/@olivierlarose1) which can be found here https://blog.olivierlarose.com/tutorials/sticky-cursor
